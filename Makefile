@@ -11,7 +11,7 @@ OS_CREATE_ANONYMOUS_FILE_FILES=os-create-anonymous-file.c os-create-anonymous-fi
 all: hello-wayland
 
 hello-wayland: main.c cat.h $(XDG_SHELL_FILES) $(OS_CREATE_ANONYMOUS_FILE_FILES)
-	$(CC) $(CFLAGS) -o hello-wayland $(WAYLAND_FLAGS) *.c
+	$(CC) $(CFLAGS)  *.c -o hello-wayland $(WAYLAND_FLAGS)
 
 xdg-shell-client-protocol.h:
 	$(WAYLAND_SCANNER) client-header $(XDG_SHELL_PROTOCOL) xdg-shell-client-protocol.h
